@@ -1,0 +1,80 @@
+@import "colors";
+@import "mediaquery";
+.new-btn-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 1rem 0px;
+  @include tablet {
+  padding: 5px 0px;
+
+  }
+}
+.circle-box {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  border: 1px solid $EEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.feature-list {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.875rem;
+}
+.product-feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7.5rem;
+  gap: 8.125rem;
+  @include mobile {
+  padding-top: 4rem;
+
+  }
+  h1 {
+    max-width: 500px;
+    margin-bottom: 1.5rem !important;
+    @include mobile {
+    margin-bottom: 0.4rem !important;
+
+    }
+  }
+  .growth-para {
+    max-width: 530px;
+  }
+  .p3 {
+    font-weight: 400;
+  }
+  .product1 {
+    width: 559px;
+    @include desktop {
+      width: 400px;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  .topspace {
+    margin-top: 1.25rem;
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+    gap: 0.625rem;
+    align-items: center;
+    margin-top: 1.875rem;
+    .p2 {
+      color: $blue;
+    }
+  }
+}

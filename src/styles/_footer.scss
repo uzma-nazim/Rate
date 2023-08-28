@@ -1,0 +1,76 @@
+@import "mediaquery";
+
+.footer-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 6.25rem 0px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eee;
+  @include tablet {
+    padding: 4rem 0px;
+    flex-direction: column;
+
+  }
+  .p4 {
+    color: $gray2;
+    text-transform: lowercase;
+  }
+  .footer-warapper {
+    width: 400px;
+    @include tablet {
+    width:max-content;
+        
+    
+      }
+    .footer-text {
+      margin-top: 1.25rem;
+      margin-bottom: 2.5rem;
+      max-width: 311px;
+    }
+  }
+  .footer-link {
+    .p6 {
+      margin-bottom: 2.25rem;
+    }
+    .p2 {
+      margin-bottom: 0.75rem;
+      font-size: 15px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+ 
+  a {
+    text-decoration: none;
+  }
+  .footer-icon {
+    display: flex;
+    align-items: center;
+      gap: 1.25rem;
+    svg {
+      font-size: 30px;
+      color: $lightgray;
+
+    }
+  }
+  .footer-bottom-link {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.75rem 0px;
+  }
+  @include tablet{
+  .footer-icon {
+    margin-top: 20px;
+  }
+    flex-direction: column;
+    justify-content: center;
+  }
+}

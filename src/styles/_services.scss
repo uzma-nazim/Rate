@@ -1,0 +1,44 @@
+@import "colors";
+@import "mediaquery";
+.services-card {
+  box-shadow: 0px 6px 90px 0px rgba(8, 14, 40, 0.04);
+
+  background: rgba(255, 255, 255, 0);
+  width: 450px;
+  border-radius: 8px;
+  padding: 3.125rem;
+  h5 {
+    margin-top: 1.875rem;
+    margin-bottom: 1.25rem !important;
+  }
+  .icon-box {
+    background-color: $lightblue;
+
+    display: flex;
+    width: 64px;
+    height: 64px;
+    padding: 14px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+}
+.services-box {
+  display: flex;
+  align-items: center;
+  // flex-wrap: wrap;
+  gap: 3.125rem;
+  // flex-wrap: wrap;
+  @include desktop {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    justify-content: center;
+  }
+}
+.top-space {
+  margin-top: 3.125rem;
+  @include desktop {
+    margin-top: 1.125rem;
+  }
+}

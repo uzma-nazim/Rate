@@ -1,0 +1,22 @@
+@import "colors";
+@import "mediaquery";
+.brandlogo {
+  background-color: $lightWhite;
+  border-top: 1px solid $EEE;
+  border-bottom: 1px solid $EEE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 45px 20px;
+  flex-wrap: wrap;
+  gap: 2rem;
+  @include mobile{
+    justify-content: space-around;
+  }
+  img{
+    width: 99px;
+    @include mobile{
+      width: 83px;
+    }
+  }
+}

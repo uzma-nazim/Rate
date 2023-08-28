@@ -1,0 +1,41 @@
+@import "mediaquery";
+
+.core-feature-box {
+  // max-width: 770px;
+  // border: 1px solid red;
+  width: 100%;
+  padding-top: 7.5rem;
+  padding-bottom: 5rem;
+  @include tablet {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+  @include mobile {
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+  }
+  .core-warpper {
+    @include mobile {
+      h1,
+      button {
+        margin-bottom: 12px !important;
+      }
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    flex-direction: column;
+  }
+  p {
+    max-width: 643px;
+  }
+  h1 {
+    margin-bottom: 1rem !important;
+    max-width: 695px;
+  }
+  button {
+    margin-bottom: 1rem;
+  }
+}

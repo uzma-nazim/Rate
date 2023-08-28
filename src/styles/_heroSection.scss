@@ -1,0 +1,73 @@
+.input-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  input {
+    box-shadow: 0px 2px 10px 0px rgba(122, 135, 167, 0.05);
+  }
+}
+.image-box {
+  position: relative;
+  .shape1 {
+    position: absolute;
+    top: 0px;
+    left: -46px;
+    @include tablet {
+      display: none;
+    }
+  }
+  .hero-image {
+    max-width: 624px;
+    box-shadow: 0px 10px 120px 0px rgba(45, 74, 170, 0.1);
+    @include largeScreen {
+      max-width: 537px;
+    }
+    @include desktop {
+      max-width: 463px;
+    }
+    @include tablet {
+      display: none !important;
+
+      .shape1 {
+        display: none !important;
+      }
+    }
+  }
+}
+.hero-section-box {
+  display: flex;
+  padding: 113px 0px 102px 0px;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    justify-content: flex-start;
+  padding: 45px  15px 40px 15px;
+
+  }
+  // flex-wrap: wrap;
+  h1 {
+    margin-bottom: 1.25rem !important;
+    @include largeScreen {
+      max-width: 500px;
+    }
+    @include desktop {
+      max-width: 463px;
+    }
+    @include desktop {
+      margin-top: 10px;
+    }
+  }
+  p {
+    max-width: 630px;
+    // max-width: 500px;
+    @include largeScreen {
+      max-width: 500px;
+    }
+    @include desktop {
+      max-width: 448px;
+    }
+  }
+}
