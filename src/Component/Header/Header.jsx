@@ -11,7 +11,7 @@ function Header() {
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" className=" bg-white mt-2 header-box">
       <Container>
-        <Navbar.Brand href="#home" >
+        <Navbar.Brand href="/" >
           <div className="header-logo">
             <img src={logo.src} alt="" />
             <h5 className={myFont.className}>  Rate</h5>
@@ -20,7 +20,7 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto link-wrapper" >
-            <Nav.Link href="#features" className="header-link" >Home</Nav.Link>
+            <Nav.Link href="/" className="header-link" >Home</Nav.Link>
             <Nav.Link href="#pricing"  className="header-link">Feature</Nav.Link>
             <Nav.Link href="#pricing"  className="header-link">Support</Nav.Link>
    
