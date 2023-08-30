@@ -4,7 +4,7 @@ import dotted from "@/assets/images/dot.png";
 
 const PricingPlan = () => {
   return (
-    <div className='container price-plan-box'>
+    <div className='container price-plan-box' id="plans">
       <img src={dotted.src} className="plan-dot" alt="" />
 
         <PricePlanCard/>

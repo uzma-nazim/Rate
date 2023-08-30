@@ -4,6 +4,7 @@ import TabsContent from "./TabsContent";
 import ProductGrowth from "../ProductGrowth/ProductGrowth";
 import aboutlight01 from "@/assets/images/features-light-01.png";
 import shapedottedlight from "@/assets/images/shape-dotted-light.svg";
+import HrFeature from "../HrFeature/HrFeature";
 
 const TabButtun = ({ title, count }) => {
   return (
@@ -32,44 +33,21 @@ function FeatureTabs() {
       >
         <Tab
           eventKey="home"
-          title={<TabButtun title={"Clean User Interface"} count={"01"} />}
+          title={<TabButtun title={"Rate HR"} count={"01"} />}
         >
-          <ProductGrowth
-            title={"Solid Has Neat & Clean User Interface."}
-            para={
-              " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le."
-            }
-            image={aboutlight01}
-            disableBtn
-          />
+          <HrFeature />
         </Tab>
         <Tab
           eventKey="profile"
-          title={<TabButtun title={"Cloud Data Save Options"} count={"02"} />}
+          title={<TabButtun title={"Rate Exchange"} count={"02"} />}
         >
-          <ProductGrowth
-            title={"Solid Has Cloud Data Save Options."}
-            para={
-              " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le."
-            }
-            image={aboutlight01}
-            disableBtn
-          />
+          <HrFeature />
         </Tab>
         <Tab
           eventKey="longer-tab"
-          title={
-            <TabButtun title={"Management And Collaboration"} count={"03"} />
-          }
+          title={<TabButtun title={"Rate Finance"} count={"03"} />}
         >
-          <ProductGrowth
-            title={"Solid Has Management And Collaboration."}
-            para={
-              " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le."
-            }
-            image={aboutlight01}
-            disableBtn
-          />
+          <HrFeature />
         </Tab>
       </Tabs>
     </div>

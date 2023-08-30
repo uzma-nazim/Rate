@@ -15,12 +15,7 @@ const Testimonial = () => {
     autoplay: false,
     autoplaySpeed: 3000,
     responsive: [
-      // {
-      //   breakpoint: 1700,
-      //   settings: {
-      //     slidesToShow: 3,
-      //   },
-      // },
+
       {
         breakpoint: 1400,
         settings: {

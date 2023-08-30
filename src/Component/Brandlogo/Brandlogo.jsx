@@ -1,10 +1,10 @@
 import React from "react";
-import brand from "@/assets/images/brand-light-01.svg";
-import brand2 from "@/assets/images/brand-light-02.svg";
-import brand3 from "@/assets/images/brand-light-03.svg";
-import brand4 from "@/assets/images/brand-light-04.svg";
-import brand5 from "@/assets/images/brand-light-05.svg";
-import brand6 from "@/assets/images/brand-light-06.svg";
+import brand from "@/assets/images/Picture3.png";
+import brand2 from "@/assets/images/Picture21.png";
+import brand3 from "@/assets/images/comapny-logo10.png";
+import brand4 from "@/assets/images/company-logo3.png";
+import brand5 from "@/assets/images/company-logo6.png";
+import brand6 from "@/assets/images/company-logo9.png";
 const Brandlogo = () => {
   return (
     <div className="light-bg">

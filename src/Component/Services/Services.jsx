@@ -24,20 +24,8 @@ const Services = () => {
             );
           })}
         </div>
-        <div className="services-box  top-space">
-          {services.slice(3, 6).map((item) => {
-            console.log("item", item);
-            return (
-              <ServicesCard
-                title={item.tittle}
-                desc={item.content}
-                icon={item.icon}
-                img={item.img}
-              />
-            );
-          })}
-        </div>
-        <div
+ 
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "center",
@@ -51,7 +39,7 @@ const Services = () => {
           >
             View All
           </button>
-        </div>
+        </div> */}
       </div>
       {/* <div className="services-box container top-space">
         <ServicesCard />

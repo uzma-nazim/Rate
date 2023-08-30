@@ -29,10 +29,10 @@ export default function Home() {
       <HeroSection />
       <Brandlogo />
       <CoreFeature
-        title={"Our Software's Core Features"}
-        btntext={"SAAS FEATURES"}
+        title={"Our Company's Products"}
+        btntext={"Products"}
         para={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus."
+          "Revolutionizing industries, our pioneering solution seamlessly blends advanced technologies with Innovative Solutions"
         }
       />
       <Services />

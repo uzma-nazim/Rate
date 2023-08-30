@@ -9,22 +9,33 @@ import arabic from "@/assets/images/arabic.png"
 import map from "@/assets/images/map.png"
 import active from "@/assets/images/active.png"
 import layout from "@/assets/images/layout.png"
+import ratehr from "@/assets/images/ratehr.png"
+import exchange from "@/assets/images/exchange.png"
+import bars from "@/assets/images/bars.png"
 
 const content = {
     services: [
 
         {
-            tittle: "Attendance Tracking",
-            content: "Comprehensive view of employee attendance and their request statuses.",
+            tittle: "Rate HR",
+            content: "Rate HR is a workforce performance management tool for making informed decisions",
             icon: null,
-            img: attendance.src
+            img: ratehr.src
 
         },
         {
-            tittle: "Background Service",
-            content: "Background location tracking for enhanced security and monitoring.",
+            tittle: "Rate Exchange",
+            content: "Rate Exchange makes currency conversion effortless, smooth and simple",
+            
             icon: null,
-            img: locations.src
+            img: exchange.src
+
+        },
+        {
+            tittle: "Rate Finance",
+            content: "Rate Finance effortlessly aids you in tracking, budgeting, and optimizing your funds",
+            icon: null,
+            img: bars.src
 
         },
         {

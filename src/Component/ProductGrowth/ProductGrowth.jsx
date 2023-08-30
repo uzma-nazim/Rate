@@ -2,6 +2,7 @@ import React from "react";
 import aboutlight01 from "@/assets/images/about-light-02.png";
 import iconarrowlight from "@/assets/images/icon-arrow-light.svg";
 const ProductGrowth = ({
+  para2,
   disableSecondPara,
   disableBtn,
   image,
@@ -17,7 +18,7 @@ const ProductGrowth = ({
         </div>
         <h1 className="h1">{title}</h1>
         <p className="p2 growth-para ">{para}</p>
-        {disableSecondPara ? null : <p className="p2 growth-para  topspace">{para}</p>}
+        {disableSecondPara ? null : <p className="p2 growth-para  topspace">{para2}</p>}
         {disableBtn ? null : (
           <a href="#" className="">
             <p className="p2"> Know More</p>
