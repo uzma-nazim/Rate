@@ -15,42 +15,40 @@ const Services = () => {
   return (
     <>
       <div id="product" className="container">
-        <div className="services-box">
+        <motion.div
+          ref={elementRef}
+          variants={{
+            hidden: { opacity: 0, y: -50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+
+              transition: {
+                // delay: delay,
+                duration: 0.8,
+                easings: "easeOut",
+              },
+            },
+          }}
+          initial={"hidden"}
+          animate={mainControls}
+          className="services-box"
+        >
           {services.slice(0, 3).map((item, ind) => {
             const delayMultiplier = 0.2; // Adjust this value to control the delay spacing
             const delay = ind * delayMultiplier;
             return (
-              <motion.div
-                ref={elementRef}
-                variants={{
-                  hidden: { opacity: 0, y: -50 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-
-                    transition: {
-                      // delay: delay,
-                      duration: 0.8,
-                      easings: "easeOut",
-                    },
-                  },
-                }}
-                initial={"hidden"}
-                animate={mainControls}
-      
-
-                key={ind}
-              >
+              <div key={ind}>
                 <ServicesCard
                   title={item.tittle}
                   desc={item.content}
                   icon={item.icon}
                   img={item.img}
                 />
-              </motion.div>
+              </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* <div
           style={{

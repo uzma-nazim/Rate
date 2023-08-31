@@ -4,7 +4,7 @@ import { useAnimation, useInView } from 'framer-motion';
 const useInViewAnimation = () => {
     const mainControls = useAnimation();
     const elementRef = useRef(null);
-    const isInView = useInView(elementRef, { amount: 0.4 });
+    const isInView = useInView(elementRef, { amount: 0.2 });
     // const isInView = useInView(elementRef);
 
 

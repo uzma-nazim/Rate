@@ -15,7 +15,7 @@ const PricingPlan = () => {
         delay={0.2}
         tittle="Basic"
         count="10-49"
-        storage="300 GB Storage"
+        storage="2 GB Storage"
         subtitle="It is preferred for small businesses seeking tailored solutions"
         language=" "
         manitaince=" "
@@ -26,7 +26,7 @@ const PricingPlan = () => {
         delay={0.4}
         tittle="Standard"
         count=" 50-249"
-        storage="600 GB Storage"
+        storage="5 GB Storage"
         manitaince=" "
         timeline=" "
         language=""
@@ -34,7 +34,7 @@ const PricingPlan = () => {
       />
       <PricePlanCard
         delay={0.6}
-        storage="900 GB Storage"
+        storage="10 GB Storage"
         language=" "
         timeline=" "
         manitaince=""
