@@ -38,7 +38,7 @@ const content = {
         },
         {
             tittle: "Rate Finance",
-            content: "Rate Finance effortlessly aids you in tracking, budgeting, and optimizing your funds",
+            content: "Rate Finance seamlessly aids you in tracking, budgeting, and optimizing your funds",
             icon: null,
             img: bars.src
 
@@ -109,27 +109,31 @@ const content = {
             name: "Jane Smith",
             email: "jane.smith@fictitioustech.com",
             profilePic: client1.src,
-            review: "I can't believe the incredible transformation Rate products have brought to our company! Before using their HRM, Finance, and Exchange solutions, our operations were a complete mess. But ever since we integrated their cutting-edge technology, everything has become seamless and efficient beyond imagination"
+            review: "I can't believe the incredible transformation Rate products have brought to our company! Before using their  HR , our operations were a complete mess. But ever since we integrated their cutting-edge technology, everything has become seamless and efficient beyond imagination"
         },
         {
             name: "DreamSolutions ",
             email: "info@dreamsolutions.com",
             profilePic: client2.src,
-            review: "I'm thrilled with Rate's HRM product! It's transformed the way we manage our workforce. Tasks that used to take hours are now completed in minutes, thanks to the intuitive interface and automation features. Our team is more organized, and I can't imagine running our company without it"
+            review: "I'm thrilled with Rate's HR product! It's transformed the way we manage our workforce. Tasks that used to take hours are now completed in minutes, thanks to the intuitive interface and automation features. Our team is more organized, and I can't imagine running our company without it"
         },
         {
             name: " NexusSolutions  ",
             email: "contact@nexussolutions.com",
             profilePic: client3.src,
-            review: "At NexusSolutions Ltd. (contact@nexussolutions.com), Rate's HRM product has been a lifesaver. It's made employee management a breeze with its user-friendly interface and automation. Our HR team is now more effective, and the self-service options are a hit with our staff. Couldn't be happier with the results!"
+            review: "At NexusSolutions Ltd. (contact@nexussolutions.com), Rate's HR product has been a lifesaver. It's made employee management a breeze with its user-friendly interface and automation. Our HR team is now more effective, and the self-service options are a hit with our staff. Couldn't be happier with the results!"
         },
         {
             name: " stellarsynergyz  ",
             email: "contact@stellarsynergy.org",
             profilePic: client4.src,
-            review: "Rate's HRM product has transformed our workforce management at StellarSynergy Ltd. (contact@stellarsynergy.org). The efficiency it brings to our HR processes is remarkable. Our team can now focus on strategic initiatives, and the automation has eliminated repetitive tasks. A must-have for any growing business!"
+            review: "Rate's HR product has transformed our workforce management at StellarSynergy Ltd. (contact@stellarsynergy.org). The efficiency it brings to our HR processes is remarkable. Our team can now focus on strategic initiatives, and the automation has eliminated repetitive tasks. A must-have for any growing business!"
         }
-    ]
+    ],
+    contact:{
+        mailLink:'mailto:rateeehr@gmail.com',
+
+    }
 }
 
 export { content }

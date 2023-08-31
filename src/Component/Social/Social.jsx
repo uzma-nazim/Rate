@@ -1,39 +1,59 @@
-import React from "react";
+import React, { useRef } from "react";
 import CoreFeature from "../CoreFeature/CoreFeature";
 import socialbox from "@/assets/images/social-box.svg";
 import dotted from "@/assets/images/dot.png";
-import web from "@/assets/images/web.png";
-import and from "@/assets/images/and.png";
-import ios from "@/assets/images/ios.png";
+import web from "@/assets/images/browser.png";
+import and from "@/assets/images/game.png";
+import ios from "@/assets/images/app-store.png";
+import { motion } from "framer-motion";
+import useInViewAnimation from "@/Hook/useInViewAnimation";
 
 const Social = () => {
+  const remote = useRef();
+  const { elementRef, mainControls } = useInViewAnimation();
+
   return (
     <div className="social-box container">
       <CoreFeature
-        title={"Remotely Maintain Your Data, From Anywhere, Anytime."}
+        elementRef={remote}
+        title={"Remote Interaction"}
         btntext={"INTEGRATIONS"}
         para={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus."
+          "Experience our versatile Remote Maintenance and Installation solution, conveniently accessible anytime and from anywhere around the globe"
         }
       />
       {/* <img src={socialbox.src} alt="" className="social-img" /> */}
-      <div className="socila-icon-box">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+
+            transition: {
+              duration: 0.8,
+              easings: "easeOut",
+            },
+          },
+        }}
+        initial={"hidden"}
+        animate={mainControls}
+        ref={elementRef}
+        className="socila-icon-box"
+      >
         <div className="orange-circle"></div>
         <div className="yellow-circle"></div>
         <div className="blue-circle"></div>
         <div className="icon-circle">
-          <img src={web.src} alt="" />
+          <img className="web" src={web.src} alt="" />
         </div>
         <div className="icon-circle androide">
-
-        <img src={and.src} alt="" />
-
+          <img src={and.src} alt="" />
         </div>
         <div className="icon-circle ios">
-        <img src={ios.src} alt="" />
-
+          <img src={ios.src} alt="" />
         </div>
-      </div>
+      </motion.div>
 
       <img src={dotted.src} className="social-dot" alt="" />
     </div>

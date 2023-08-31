@@ -2,7 +2,7 @@ import React from "react";
 import icon01 from "@/assets/images/icon-01.svg";
 import { BsBoxSeam } from "react-icons/bs";
 const ServicesCard = ({ title, desc, icon, img }) => {
-  console.log("icon ", icon )
+  
   return (
     <div className="services-card">
       <div className="icon-box">{icon ?

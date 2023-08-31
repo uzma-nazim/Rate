@@ -59,9 +59,13 @@
       justify-content: center;
       align-items: center;
       position: absolute;
+      cursor: pointer;
       top: 11%;
       img{
         width: 60px;
+      }
+      .web{
+        width:70px;
       }
       left: 30%;
       @include mobile{

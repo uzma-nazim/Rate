@@ -5,8 +5,12 @@ import ProductGrowth from "../ProductGrowth/ProductGrowth";
 import aboutlight01 from "@/assets/images/features-light-01.png";
 import shapedottedlight from "@/assets/images/shape-dotted-light.svg";
 import HrFeature from "../HrFeature/HrFeature";
+import { motion } from "framer-motion";
+import useInViewAnimation from "@/Hook/useInViewAnimation";
 
 const TabButtun = ({ title, count }) => {
+  const { elementRef, mainControls } = useInViewAnimation();
+
   return (
     <div>
       <div className="tabs-button">
@@ -21,12 +25,12 @@ const TabButtun = ({ title, count }) => {
   );
 };
 
-function FeatureTabs() {
+const FeatureTabs = () => {
   return (
     <div className="feature-tabs-box">
       <img src={shapedottedlight.src} className="doted-image" alt="" />
       <Tabs
-        defaultActiveKey="profile"
+        defaultActiveKey="home"
         id="fill-tab-example"
         className="mb-3 container featureTab"
         fill
@@ -52,6 +56,6 @@ function FeatureTabs() {
       </Tabs>
     </div>
   );
-}
+};
 
 export default FeatureTabs;

@@ -3,28 +3,55 @@ import ServicesCard from "../ServicesCard/ServicesCard";
 import { content } from "@/content";
 import { useRouter } from "next/router";
 // import content from "@/content.js";
+import { motion } from "framer-motion";
+import useInViewAnimation from "@/Hook/useInViewAnimation";
 
 const Services = () => {
+  const { elementRef, mainControls } = useInViewAnimation();
+
   const { services } = content;
   const router = useRouter();
-  console.log("services", services);
+
   return (
     <>
-      <div className="container">
-        <div className="services-box ">
-          {services.slice(0, 3).map((item) => {
-            console.log("item", item);
+      <div id="product" className="container">
+        <div className="services-box">
+          {services.slice(0, 3).map((item, ind) => {
+            const delayMultiplier = 0.2; // Adjust this value to control the delay spacing
+            const delay = ind * delayMultiplier;
             return (
-              <ServicesCard
-                title={item.tittle}
-                desc={item.content}
-                icon={item.icon}
-                img={item.img}
-              />
+              <motion.div
+                ref={elementRef}
+                variants={{
+                  hidden: { opacity: 0, y: -50 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+
+                    transition: {
+                      // delay: delay,
+                      duration: 0.8,
+                      easings: "easeOut",
+                    },
+                  },
+                }}
+                initial={"hidden"}
+                animate={mainControls}
+      
+
+                key={ind}
+              >
+                <ServicesCard
+                  title={item.tittle}
+                  desc={item.content}
+                  icon={item.icon}
+                  img={item.img}
+                />
+              </motion.div>
             );
           })}
         </div>
- 
+
         {/* <div
           style={{
             display: "flex",

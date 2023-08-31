@@ -2,11 +2,29 @@ import React from "react";
 import herolight from "@/assets/images/hero-light.png";
 import shape01 from "@/assets/images/shape-01.png";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+
+// const motion = dynamic(
+//   () => import("framer-motion").then((module) => module.motion),
+//   { ssr: false }
+// );
 
 const HeroSection = () => {
   return (
-    <div className="container  hero-section-box">
-      <div>
+    <div id="home" className="container  hero-section-box">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }} // Initial opacity set to 0 and y-position set to 50px (downwards)
+        animate={[
+          
+          { opacity: 1, x: 0, transition: { duration: 0.1, ease: "easeOut" } }, // Faster accel
+          {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 1.1, ease: "easeInOut" },
+          }, // Normal start
+        ]}
+      >
         <p className="p1"> 🔥 Rate is one of the best option for you</p>
         <h1 className="h1"> Innovation through exceptional app creation</h1>
         <p className="p2">
@@ -18,22 +36,28 @@ const HeroSection = () => {
           drive impactful results
         </p>
         <div className="input-box">
-          {/* <input
-            type="text"
-            className="input1"
-            placeholder="Enter your email address"
-          /> */}
           <Link href="#plans">
             <button className="round-btn bg-blue">Get Started</button>
           </Link>
         </div>
-
-        {/* <p className="p2 text-gray">Try for free no credit card required</p> */}
-      </div>
-      <div className="image-box">
+      </motion.div>
+      <motion.div
+        className="image-box"
+        initial={{ opacity: 0, x: 50 }} // Initial opacity set to 0 and y-position set to 50px (downwards)
+        animate={[
+          // { opacity: 1, x: 0, transition: { duration: 0.1, ease: "easeOut" } }, // Sudden start
+          // { opacity: 1, x: 0, transition: { duration: 1.5, ease: "easeOut" } }, // Slower end
+          { opacity: 1, x: 0, transition: { duration: 0.1, ease: "easeOut" } }, // Faster accel
+          {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 1.1, ease: "easeInOut" },
+          },
+        ]}
+      >
         <img className="hero-image" src={herolight.src} alt="" />
         <img className="shape1" src={shape01.src} alt="" />
-      </div>
+      </motion.div>
     </div>
   );
 };

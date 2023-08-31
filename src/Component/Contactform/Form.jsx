@@ -1,10 +1,32 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import leftArrow from "@/assets/images/icon-arrow-dark.svg";
+import { motion } from "framer-motion";
+import useInViewAnimation from "@/Hook/useInViewAnimation";
 
 const FormBox = () => {
+  const { elementRef, mainControls } = useInViewAnimation();
+
   return (
-    <div className="form-box">
+    <motion.div 
+    variants={{
+      hidden: { opacity: 0, y: -50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+
+        transition: {
+          
+
+          duration: 0.8,
+          easings: "easeOut",
+        },
+      },
+    }}
+    initial={"hidden"}
+    animate={mainControls}
+    ref={elementRef}
+    className="form-box">
       <h3 className="h3">Send a message</h3>
       <div>
         <div className="input-box">
@@ -32,12 +54,12 @@ const FormBox = () => {
             </p>
           </div>
           <button className="round-btn bg-blue">
-            Sign up free
+            Send
             <img src={leftArrow.src} alt="" />
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -18,17 +18,28 @@ import Testimonial from '@/Component/Testimonial/Testimonial'
 import PricingPlan from '@/Component/PricingPlan/PricingPlan'
 import Contactform from '@/Component/Contactform/Contactform'
 import Footer from '@/Component/Footer/Footer'
+import { useRef } from 'react'
+import useInViewAnimation from '@/Hook/useInViewAnimation'
+import { motion } from "framer-motion";
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { elementRef, mainControls } = useInViewAnimation();
+
+  const company = useRef(null)
+  const product = useRef(null)
+  const testimonial = useRef(null)
+  const palns = useRef(null)
   return (
     <>
+      <div className='line-animation'></div>
       <Header />
       <HeroSection />
       <Brandlogo />
       <CoreFeature
+        elementRef={company}
         title={"Our Company's Products"}
         btntext={"Products"}
         para={
@@ -38,41 +49,55 @@ export default function Home() {
       <Services />
       {/* <ProductFeature /> */}
       <div className='knowMoreProduct'>
-      <CoreFeature
-        title={"Know More About Our Product"}
-        btntext={"Description"}
-        para={
-          "Empowering efficiency and innovation, our diverse lineup of technology products addresses modern challenges with cutting-edge solutions"
-        }
-      />
-</div>
-      {/* <ProductGrowth
-        disableSecondPara
-        title={"Track Your Audience Activities"}
-        para={
-          " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le."
-        }
-        image={aboutlight01}
+        <CoreFeature
+          elementRef={product}
+          title={"Know More About Our Product"}
+          btntext={"Description"}
+          para={
+            "Empowering efficiency and innovation, our diverse lineup of technology products addresses modern challenges with cutting-edge solutions"
+          }
+        />
+      </div>
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: -60 },
+          visible: {
+            opacity: 1,
+            y: 0,
 
-      /> */}
-      <FeatureTabs />
+            transition: {
+              duration: 0.8,
+              easings: "easeOut",
+            },
+          },
+        }}
+        initial={"hidden"}
+        animate={mainControls}
+
+        ref={elementRef}
+      >
+        <FeatureTabs />
+      </motion.div>
+
       <TrustedBy />
       <Social />
       <JoinWithUs />
       <Faqs />
       <CoreFeature
+        elementRef={testimonial}
         title={"Client’s Testimonials"}
         btntext={"TESTIMONIALS"}
         para={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus."
+          "Listening to our clients' success stories resonates deeply, echoing the quality of our services"
         }
       />
       <Testimonial />
       <CoreFeature
+        elementRef={palns}
         title={"PRICING PLANS"}
         btntext={"Simple Pricing"}
         para={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus."
+          "Explore versatile pricing plans to match your needs. From budget-friendly options to scalable features, find your ideal plan with transparent pricing"
         }
 
       />

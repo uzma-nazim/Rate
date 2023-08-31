@@ -9,25 +9,25 @@ const ProductGrowth = ({
   title,
   para,
 }) => {
-  
   return (
-    <div className="product-feature container">
-      <div className="featuer-content">
-        {/* <div className="new-btn-box">
-          <p className="p2 text-dark-blue"> GROW YOUR BUSINESS FASTER</p>
-        </div> */}
-        <h1 className="h1">{title}</h1>
-        <p className="p2 growth-para ">{para}</p>
-        {disableSecondPara ? null : <p className="p2 growth-para  topspace">{para2}</p>}
-        {disableBtn ? null : (
-          <a href="#" className="">
-            <p className="p2"> Know More</p>
-            <img src={iconarrowlight.src} alt="" />
-          </a>
-        )}
+    <>
+      <div className="product-feature container">
+        <div className="featuer-content">
+          <h1 className="h1">{title}</h1>
+          <p className="p2 growth-para ">{para}</p>
+          {disableSecondPara ? null : (
+            <p className="p2 growth-para  topspace">{para2}</p>
+          )}
+          {disableBtn ? null : (
+            <a href="#" className="">
+              <p className="p2"> Know More</p>
+              <img src={iconarrowlight.src} alt="" />
+            </a>
+          )}
+        </div>
+        <img className="product1" src={image?.src} alt="" />
       </div>
-      <img className="product1" src={image?.src} alt="" />
-    </div>
+    </>
   );
 };
 

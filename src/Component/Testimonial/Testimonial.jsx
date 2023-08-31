@@ -2,20 +2,24 @@ import React from "react";
 import TestimonialCard from "../TestimonialCard/TestimonialCard";
 import Slider from "react-slick";
 import { content } from "@/content";
+import { motion } from "framer-motion";
+import useInViewAnimation from "@/Hook/useInViewAnimation";
 
 const Testimonial = () => {
+  const { elementRef, mainControls } = useInViewAnimation();
+
   const { testimonial } = content;
   const settings = {
     dots: true,
     infinite: false,
     arrows: false,
-    speed: 1500,
+    speed: 3000,
     centerMode: false,
     slidesToShow: 2,
     slidesToScroll: 1,
 
-    autoplay: false,
-    autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1400,
@@ -40,24 +44,39 @@ const Testimonial = () => {
     cssEase: "ease-out",
   };
   return (
-    <div className="container">
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: -50 },
+        visible: {
+          opacity: 1,
+          y: 0,
+
+          transition: {
+            duration: 0.8,
+            easings: "easeOut",
+          },
+        },
+      }}
+      initial={"hidden"}
+      animate={mainControls}
+      ref={elementRef}
+      className="container"
+    >
       <Slider {...settings}>
-        {testimonial.map((item) => {
+        {testimonial.map((item, ind) => {
           return (
-            <TestimonialCard
-              name={item.name}
-              email={item.email}
-              profilePic={item.profilePic}
-              review={item.review}
-            />
+            <div key={ind}>
+              <TestimonialCard
+                name={item.name}
+                email={item.email}
+                profilePic={item.profilePic}
+                review={item.review}
+              />
+            </div>
           );
         })}
-        {/* <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
-         */}
       </Slider>
-    </div>
+    </motion.div>
   );
 };
 

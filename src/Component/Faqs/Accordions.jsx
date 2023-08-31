@@ -48,7 +48,7 @@ function AccordionsComp() {
               Our HRM Management System offers a comprehensive suite of features
               designed to streamline your workforce management. From employee
               onboarding, attendance tracking, leave management, and performance
-              evaluation, to payroll processing and reporting, our system covers
+              evaluation, punch-in/out, our system almost covers
               all aspects of HR management. It's available both as a web
               application and a mobile app, ensuring you have access to crucial
               HR functions anytime, anywhere.

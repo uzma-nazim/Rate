@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import { BiLogoFacebook, BsInstagram } from "react-icons/bi";
 import { FiInstagram } from "react-icons/fi";
 import { AiFillLinkedin } from "react-icons/ai";
+import Link from "next/link";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const myFont = localFont({ src: "../../assets/font/corporate-normal.otf" });
 const Footer = () => {
@@ -11,7 +13,7 @@ const Footer = () => {
     <div>
       <div className="horizontal-line"></div>
       <div className="container">
-        <div className=" footer-box">
+        {/* <div className=" footer-box">
           <div className="footer-warapper">
             <div className="header-logo">
               <img src={logo.src} alt="" />
@@ -59,26 +61,25 @@ const Footer = () => {
             <p className="p2"> Subscribe to receive future updates</p>
             <input type="text" className="input1" placeholder="Email Address" />
           </div>
-        </div>
+        </div> */}
 
         <div className="footer-bottom">
           <div className="footer-bottom-link">
-            <a href="">
+            {/* <a href="">
               <p className="p2"> English</p>
-            </a>
-            <a href="">
+            </a> */}
+            <Link href="https://rate-d1e9d.web.app/" target="_blank">
               <p className="p2"> Privacy Policy</p>
-            </a>
-            <a href="">
+            </Link>
+            <Link href="https://rate-d1e9d.web.app/feedback"  target="_blank">
               <p className="p2"> Support</p>
-            </a>
+            </Link>
           </div>
-          <p className="p2"> © 2025 Rate. All rights reserved</p>
+          <p className="p2"> © {new Date().getFullYear()} Rate. All rights reserved</p>
           <div className="footer-icon">
-            <BiLogoFacebook />
-            <AiFillLinkedin />
+            <FaLinkedinIn />
             <FiInstagram />
-            
+            <BiLogoFacebook />
           </div>
         </div>
       </div>
