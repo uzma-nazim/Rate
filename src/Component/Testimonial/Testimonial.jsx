@@ -1,8 +1,10 @@
 import React from "react";
 import TestimonialCard from "../TestimonialCard/TestimonialCard";
 import Slider from "react-slick";
+import { content } from "@/content";
 
 const Testimonial = () => {
+  const { testimonial } = content;
   const settings = {
     dots: true,
     infinite: false,
@@ -15,7 +17,6 @@ const Testimonial = () => {
     autoplay: false,
     autoplaySpeed: 3000,
     responsive: [
-
       {
         breakpoint: 1400,
         settings: {
@@ -41,10 +42,20 @@ const Testimonial = () => {
   return (
     <div className="container">
       <Slider {...settings}>
+        {testimonial.map((item) => {
+          return (
+            <TestimonialCard
+              name={item.name}
+              email={item.email}
+              profilePic={item.profilePic}
+              review={item.review}
+            />
+          );
+        })}
+        {/* <TestimonialCard />
         <TestimonialCard />
         <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
+         */}
       </Slider>
     </div>
   );

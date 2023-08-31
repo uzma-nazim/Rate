@@ -16,7 +16,7 @@ const JoinWithUs = () => {
       </div>
       <img src={shape06.src} alt=""  className="join-vector"/>
       <button className="round-btn bg-blue">
-        Sign up free
+        contact us
         <img src={leftArrow.src} alt="" />
       </button>
     </div>

@@ -61,7 +61,9 @@
     font-weight: 400;
   }
   .product1 {
-    width: 498px;
+    width: 532px;
+    box-shadow: 0px 10px 120px 0px rgba(45, 74, 170, 0.1);
+
     @include desktop {
       width: 400px;
     }

@@ -2,7 +2,7 @@
     position: relative;
     .social-dot{
         position:absolute;
-        bottom: 170px;
+        bottom: 124px;
         left: 0px;
         width: 100%;
         height: 377px;
@@ -14,3 +14,81 @@
         width: 100%;
     }
 }
+
+.socila-icon-box {
+    height: 300px;
+    // border: 1px solid red;
+    position: relative;
+    .orange-circle {
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      top: 56%;
+      left: 30%;
+  
+      background-color: #EF5C00;
+      border-radius: 100%;
+    }
+    .yellow-circle {
+      width: 11px;
+      height: 11px;
+      position: absolute;
+      top: -3%;
+      background-color: #ffdb26;
+      border-radius: 100%;
+      left: 50%;
+    }
+    .blue-circle {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 44%;
+      left: 70%;
+  
+      background-color: #016BFF;
+      border-radius: 100%;
+    }
+    .icon-circle {
+      width: 84px;
+      height: 73px;
+      border-radius: 10px;
+      background-color: $white;
+      box-shadow: 0px 10px 120px 0px rgba(45, 74, 170, 0.1);
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 11%;
+      img{
+        width: 60px;
+      }
+      left: 30%;
+      @include mobile{
+      left: 10%;
+
+      }
+    }
+    .androide{
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      @include mobile{
+      top: 50%;
+
+      left: 30%;
+
+      }
+    }
+    .ios{
+      position: absolute;
+      top: 10%;
+      left: 70%;
+      @include mobile{
+      left: 80%;
+
+
+      }
+    }
+  }
+  

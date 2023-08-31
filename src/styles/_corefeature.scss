@@ -36,7 +36,12 @@
     max-width: 695px;
   }
   button {
-    text-transform :uppercase !important; 
+    text-transform: uppercase !important;
     margin-bottom: 1rem;
+  }
+}
+.knowMoreProduct {
+  .core-feature-box {
+    padding-bottom: 3rem;
   }
 }

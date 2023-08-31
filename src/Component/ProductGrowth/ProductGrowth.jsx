@@ -13,9 +13,9 @@ const ProductGrowth = ({
   return (
     <div className="product-feature container">
       <div className="featuer-content">
-        <div className="new-btn-box">
+        {/* <div className="new-btn-box">
           <p className="p2 text-dark-blue"> GROW YOUR BUSINESS FASTER</p>
-        </div>
+        </div> */}
         <h1 className="h1">{title}</h1>
         <p className="p2 growth-para ">{para}</p>
         {disableSecondPara ? null : <p className="p2 growth-para  topspace">{para2}</p>}

@@ -1,21 +1,17 @@
 import React from "react";
 import user from "@/assets/images/user-02.png";
-const TestimonialCard = () => {
+const TestimonialCard = ({ name, email, profilePic, review }) => {
   return (
     <div className="testmonial-card">
       <div className="testimonial-header">
         <div>
-          <p className="p1"> Devid Smith</p>
-          <p className="p2"> Founter @democompany</p>
+          <p className="p1"> {name}</p>
+          <p className="p2"> {email}</p>
         </div>
 
-        <img src={user.src} alt="" />
+        <img src={profilePic?? user.src} alt="" />
       </div>
-      <p className="p2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-        hendrerit, ligula sit amet cursus tincidunt, lorem sem elementum nisi,
-        convallis fringilla ante nibh non urna.
-      </p>
+      <p className="p2">{review}</p>
     </div>
   );
 };

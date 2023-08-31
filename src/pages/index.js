@@ -36,9 +36,17 @@ export default function Home() {
         }
       />
       <Services />
-      <ProductFeature />
-
-      <ProductGrowth
+      {/* <ProductFeature /> */}
+      <div className='knowMoreProduct'>
+      <CoreFeature
+        title={"Know More About Our Product"}
+        btntext={"Description"}
+        para={
+          "Empowering efficiency and innovation, our diverse lineup of technology products addresses modern challenges with cutting-edge solutions"
+        }
+      />
+</div>
+      {/* <ProductGrowth
         disableSecondPara
         title={"Track Your Audience Activities"}
         para={
@@ -46,7 +54,7 @@ export default function Home() {
         }
         image={aboutlight01}
 
-      />
+      /> */}
       <FeatureTabs />
       <TrustedBy />
       <Social />
