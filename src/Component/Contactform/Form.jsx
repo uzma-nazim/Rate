@@ -26,7 +26,7 @@ const FormBox = () => {
     initial={"hidden"}
     animate={mainControls}
     ref={elementRef}
-    className="form-box">
+    className="form-box bg">
       <h3 className="h3">Send a message</h3>
       <div>
         <div className="input-box">
@@ -53,7 +53,7 @@ const FormBox = () => {
               consent cookie usage in browser.
             </p>
           </div>
-          <button className="round-btn bg-blue">
+          <button className="round-btn bg-blue bg2">
             Send
             <img src={leftArrow.src} alt="" />
           </button>

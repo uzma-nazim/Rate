@@ -38,9 +38,11 @@
 .accrodion-header {
   display: flex;
   justify-content: space-between;
+  font-size: 25px;
   cursor: pointer;
   .p1 {
     color: $blue;
+    max-width: 400px;
   }
 }
 .accordion-box {
@@ -59,7 +61,7 @@
       border-top: none;
     }
     padding: 30px 36px;
-    background-color: $white !important;
+    // background-color: $white !important;
     border: none;
     border-top: 1px solid $EEE;
     border-bottom: 1px solid $EEE;

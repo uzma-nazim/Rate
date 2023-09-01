@@ -1,9 +1,11 @@
 import React from "react";
 import aboutlight01 from "@/assets/images/features-light-01.png";
+import aboutdark from "@/assets/images/features-dark-01.png";
 import ProductGrowth from "../ProductGrowth/ProductGrowth";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import useInViewAnimation from "@/Hook/useInViewAnimation";
+import { theme } from "@/utils/theme";
 
 const HrFeature = () => {
   const settings = {
@@ -21,7 +23,7 @@ const HrFeature = () => {
   return (
     <>
       <Slider {...settings}>
-      <ProductGrowth
+        <ProductGrowth
           title={"Attendance Tracking"}
           para={
             " Gain a comprehensive overview of employee attendance within our app, presenting a clear snapshot of their clock-ins, clock-outs, and break times. This real-time view enhances workforce management and informs decision-making"
@@ -32,7 +34,7 @@ const HrFeature = () => {
           image={aboutlight01}
           disableBtn
         />
-        
+
         <ProductGrowth
           title={"Background Service"}
           para={

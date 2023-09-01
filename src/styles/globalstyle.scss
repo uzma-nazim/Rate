@@ -1,8 +1,9 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
-@import "header";
 @import "colors";
+@import "theme";
+@import "header";
 @import "heroSection";
 @import "brandLogo";
 @import "corefeature";
@@ -51,10 +52,17 @@ body{
   font-family: $family;
   font-weight: $weight;
 }
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 body{
   overflow-x: hidden;
-  scroll-behavior:smooth
+  scroll-behavior:smooth;
+  
 }
+
 p {
   margin-bottom: 0px;
 }
@@ -87,6 +95,9 @@ a{
   gap: 0.625rem;
   text-decoration: none;
   align-items: center;
+  svg{
+    margin-top: 2px;
+  }
 }
 .get-plan {
   display: flex;
@@ -101,6 +112,14 @@ a{
   font-size: 15px;
   padding: 9px 25px 8px 25px;
   width: max-content;
+  @include mobile{
+    padding: 9px 20px 10px 20px;
+    font-size: 12px;
+
+    img{
+      width: 15px
+    }
+  }
   
 }
 .btn2 {
@@ -119,9 +138,7 @@ a{
 .bg-blue {
   background-color: $blue;
 }
-.light-bg {
-  background-color: $lightWhite;
-}
+
 .p1 {
   @include p("Inter", $gray, 500);
   font-size: 18px;

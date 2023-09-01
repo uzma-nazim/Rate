@@ -8,6 +8,10 @@
   text-align: center;
   border-radius: 8px;
   padding: 6.875rem 0px;
+  @include mobile{
+  margin-top: 5.625rem;
+
+  }
   .dotetimage {
     position: absolute;
     border-radius: 8px;

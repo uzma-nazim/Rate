@@ -15,10 +15,10 @@ const TabButtun = ({ title, count }) => {
     <div>
       <div className="tabs-button">
         <div className="circle-box">
-          <p className="p3">{count}</p>
+          <p className="p3 dark-white-text">{count}</p>
         </div>
         <div>
-          <p className="p2">{title}</p>
+          <p className="p2 dark-white-text">{title}</p>
         </div>
       </div>
     </div>
@@ -27,12 +27,12 @@ const TabButtun = ({ title, count }) => {
 
 const FeatureTabs = () => {
   return (
-    <div className="feature-tabs-box">
+    <div id="feature" className="feature-tabs-box ">
       <img src={shapedottedlight.src} className="doted-image" alt="" />
       <Tabs
         defaultActiveKey="home"
         id="fill-tab-example"
-        className="mb-3 container featureTab"
+        className="mb-3 container featureTab bg2 border-color"
         fill
       >
         <Tab

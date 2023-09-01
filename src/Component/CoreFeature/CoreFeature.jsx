@@ -22,7 +22,7 @@ const CoreFeature = ({ elementRef, title, btntext, para }) => {
       initial="hidden"
       animate={mainControls}
       variants={{
-        hidden: { opacity: 0, y: -50 },
+        hidden: { opacity: 0, y: -60 },
         visible: {
           opacity: 1,
           y: 0,

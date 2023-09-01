@@ -7,9 +7,16 @@ import and from "@/assets/images/game.png";
 import ios from "@/assets/images/app-store.png";
 import { motion } from "framer-motion";
 import useInViewAnimation from "@/Hook/useInViewAnimation";
+import { useRouter } from "next/router";
+import { theme } from "@/utils/theme";
+import { useTheme } from "@/context/ThemeContext";
+import darkdotted from "@/assets/images/shape-dotted-dark-02.svg";
 
 const Social = () => {
+  const { isDarkMode } = useTheme();
+
   const remote = useRef();
+  const rourter = useRouter();
   const { elementRef, mainControls } = useInViewAnimation();
 
   return (
@@ -25,13 +32,14 @@ const Social = () => {
       {/* <img src={socialbox.src} alt="" className="social-img" /> */}
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: -50 },
+          hidden: { opacity: 0, y: -60 },
           visible: {
             opacity: 1,
             y: 0,
 
             transition: {
-              duration: 0.8,
+              duration: 1,
+              delay: 0.4,
               easings: "easeOut",
             },
           },
@@ -54,8 +62,12 @@ const Social = () => {
           <img src={ios.src} alt="" />
         </div>
       </motion.div>
-
-      <img src={dotted.src} className="social-dot" alt="" />
+      <img
+        src={isDarkMode == theme.dark ? darkdotted.src : dotted.src}
+        alt=""
+        className="social-dot"
+      />
+      {/* <img src={dotted.src} className="social-dot" alt="" /> */}
     </div>
   );
 };

@@ -8,10 +8,10 @@ import brand6 from "@/assets/images/company-logo9.png";
 import { motion } from "framer-motion";
 
 const Brandlogo = () => {
-  const logo = [brand, brand2, brand3, brand4, brand5, brand6];
+  const logo = [brand, brand2,  brand4, brand5, brand6];
   return (
-    <div className="light-bg">
-      <div className="brandlogo container">
+    <div className="light-bg border-color brandlogo-container">
+      <div className="brandlogo container ">
         {logo.map((item, ind) => {
             const delayMultiplier = 0.2; // Adjust this value to control the delay spacing
             const delay = ind * delayMultiplier;

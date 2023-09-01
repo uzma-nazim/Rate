@@ -14,7 +14,11 @@ const Services = () => {
 
   return (
     <>
-      <div id="product" className="container">
+      <div
+        onClick={() => router.push("#feature")}
+        id="product"
+        className="container"
+      >
         <motion.div
           ref={elementRef}
           variants={{

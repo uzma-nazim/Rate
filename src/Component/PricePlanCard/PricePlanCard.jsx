@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import useInViewAnimation from "@/Hook/useInViewAnimation";
 import { useRouter } from "next/router";
 import moment from "moment/moment";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { theme } from "@/utils/theme";
+import { BsArrowRight } from "react-icons/bs";
+import { FiArrowRight } from "react-icons/fi";
 
 const PricePlanCard = ({
   delay,
@@ -38,6 +42,7 @@ const PricePlanCard = ({
       "&body=" +
       encodeURIComponent(body);
       router.push(gmailComposeURL)
+      console.log("gmailComposeURL", gmailComposeURL)
   };
   return (
     <motion.div
@@ -58,7 +63,7 @@ const PricePlanCard = ({
       initial={"hidden"}
       animate={mainControls}
       ref={elementRef}
-      className="pricing-plan"
+      className="pricing-plan bg2 border-color"
     >
       {popular ? (
         <div className="popular-tag">
@@ -69,13 +74,13 @@ const PricePlanCard = ({
         <h1 className="h1">{tittle}</h1>
         {/* <p className="p2">{count  }</p> */}
       </div>
-      <p className="p3">
+      <p className="p3 dark-white-text">
         {count} <span className="smallText"> {"Employees"}</span>{" "}
       </p>
       <p className="p2  ">{subtitle}</p>
-      <div className="horizontal-line"></div>
+      <div className="horizontal-line bg3"></div>
       <div className="plan-details">
-        <p className="p2 text-dark-blue">{storage}</p>
+        <p className="p2 text-dark-blue dark-white-text">{storage}</p>
         <br />
         <br />
         <br />
@@ -86,8 +91,9 @@ const PricePlanCard = ({
         <p className="p2"> {manitaince}</p>
       </div>
       <a href="" onClick={handleGetPlan} className="get-plan">
-        <p className="p2 text-blue">Arrange Meeting</p>
-        <img src={bluearrow.src} alt="" />
+        <p className="p2 text-blue dark-white-text">Arrange Meeting</p>
+        {/* <img src={bluearrow.src} alt="" /> */}
+        <FiArrowRight style={{color:theme.dark?"#fff":"#006bff"}} />
       </a>
     </motion.div>
   );

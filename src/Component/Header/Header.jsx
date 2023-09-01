@@ -9,24 +9,29 @@ import { Button } from "react-bootstrap";
 import leftArrow from "@/assets/images/icon-arrow-dark.svg";
 import Link from "next/link";
 import { content } from "@/content";
-
+import { PiSun } from "react-icons/pi";
+import { MdOutlineDarkMode } from "react-icons/md";
 const myFont = localFont({ src: "../../assets/font/corporate-normal.otf" });
+import { useTheme } from "@/context/ThemeContext";
+import { theme } from "@/utils/theme";
+
 function Header() {
+  const { isDarkMode, toggleTheme } = useTheme();
+
   const { contact } = content;
 
   return (
     <Navbar
-    
       sticky="top"
       collapseOnSelect
       expand="lg"
-      className=" bg-white mt-2 header-box"
+      className="   header-box bg"
     >
       <Container>
         <Navbar.Brand href="/">
-          <div className="header-logo">
+          <div className="header-logo ">
             <img src={logo.src} alt="" />
-            <h5 className={myFont.className}> Rate</h5>
+            <h5 className={`${myFont.className} logo-color`}> Rate</h5>
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -44,9 +49,11 @@ function Header() {
           </Nav>
           <Nav>
             {/* <Nav.Link href="#deets" className="header-link">Sign in</Nav.Link> */}
-
+            <div onClick={toggleTheme} className="theme-mode">
+              {isDarkMode == theme.light ? <PiSun  className="mode-icon"/> : <MdOutlineDarkMode className="mode-icon"/>}
+            </div>
             <Link href={contact.mailLink}>
-              <button className="round-btn bg-blue headerContact">
+              <button className="round-btn light-blue headerContact">
                 Contact us
                 {/* <img src={leftArrow.src} alt="" /> */}
               </button>

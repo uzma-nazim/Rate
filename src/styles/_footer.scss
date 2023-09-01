@@ -46,7 +46,10 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
- 
+@include mobile{
+  padding-bottom: 20px;
+
+} 
   a {
     text-decoration: none;
   }
@@ -54,6 +57,9 @@
     display: flex;
     align-items: center;
       gap: 1.25rem;
+      @include mobile{
+        gap: 2rem;
+      }
     svg {
       font-size: 30px;
       color: $lightgray;
@@ -65,6 +71,10 @@
     align-items: center;
     gap: 2rem;
     padding: 1.75rem 0px;
+    @include mobile{
+    padding: 20px 0px;
+
+    }
   }
   @include tablet{
   .footer-icon {

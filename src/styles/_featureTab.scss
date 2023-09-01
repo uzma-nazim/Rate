@@ -14,6 +14,9 @@
   }
   .nav-link {
     border: none !important;
+    background-color: transparent   !important;
+    display: flex;
+    justify-content: center;
     // &:hover {
     // }
   }
@@ -26,10 +29,13 @@
       background-color: $lightblue;
       position: absolute;
       bottom: -11px;
-      left: 0px;
-      width: 100%;
+      left: 63px;
+      width: 74%;
       height: 4px;
       content: "";
+      @include mobile{
+        bottom: -1px;
+      }
     }
   }
 }
@@ -38,11 +44,18 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  .p2{
+    font-weight: 500;
+  }
 }
 .feature-tabs-box {
   position: relative;
   padding-top: 4.625rem;
   // border: 1px solid red;
+  @include mobile{
+  padding-top: 0px;
+
+  }
   .product-feature {
     padding-top: 4.375rem;
     @include tablet {

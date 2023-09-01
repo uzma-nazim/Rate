@@ -11,7 +11,7 @@ const myFont = localFont({ src: "../../assets/font/corporate-normal.otf" });
 const Footer = () => {
   return (
     <div>
-      <div className="horizontal-line"></div>
+      <div className="horizontal-line bg3"></div>
       <div className="container">
         {/* <div className=" footer-box">
           <div className="footer-warapper">

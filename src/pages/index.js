@@ -24,8 +24,11 @@ import { motion } from "framer-motion";
 
 
 const inter = Inter({ subsets: ['latin'] })
+import { useTheme } from '@/context/ThemeContext'
 
 export default function Home() {
+  const { isDarkMode } = useTheme()
+
   const { elementRef, mainControls } = useInViewAnimation();
 
   const company = useRef(null)
@@ -35,78 +38,82 @@ export default function Home() {
   return (
     <>
       <div className='line-animation'></div>
-      <Header />
-      <HeroSection />
-      <Brandlogo />
-      <CoreFeature
-        elementRef={company}
-        title={"Our Company's Products"}
-        btntext={"Products"}
-        para={
-          "Revolutionizing industries, our pioneering solution seamlessly blends advanced technologies with Innovative Solutions"
-        }
-      />
-      <Services />
-      {/* <ProductFeature /> */}
-      <div className='knowMoreProduct'>
-        <CoreFeature
-          elementRef={product}
-          title={"Know More About Our Product"}
-          btntext={"Description"}
-          para={
-            "Empowering efficiency and innovation, our diverse lineup of technology products addresses modern challenges with cutting-edge solutions"
-          }
-        />
+      <div className={isDarkMode}>
+        <div className='bg'>
+
+          <Header />
+          <HeroSection />
+          <Brandlogo />
+          <CoreFeature
+            elementRef={company}
+            title={"Our Company's Products"}
+            btntext={"Products"}
+            para={
+              "Revolutionizing industries, our pioneering solution seamlessly blends advanced technologies with Innovative Solutions"
+            }
+          />
+          <Services />
+          {/* <ProductFeature /> */}
+          <div className='knowMoreProduct'>
+            <CoreFeature
+              elementRef={product}
+              title={"Know More About Our Product"}
+              btntext={"Description"}
+              para={
+                "Empowering efficiency and innovation, our diverse lineup of technology products addresses modern challenges with cutting-edge solutions"
+              }
+            />
+          </div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: -60 },
+              visible: {
+                opacity: 1,
+                y: 0,
+
+                transition: {
+                  duration: 0.8,
+                  easings: "easeOut",
+                },
+              },
+            }}
+            initial={"hidden"}
+            animate={mainControls}
+
+            ref={elementRef}
+          >
+            <FeatureTabs />
+          </motion.div>
+
+          <TrustedBy />
+          <Social />
+          <JoinWithUs />
+          <Faqs />
+          <CoreFeature
+            elementRef={testimonial}
+            title={"Client’s Testimonials"}
+            btntext={"TESTIMONIALS"}
+            para={
+              "Listening to our clients' success stories resonates deeply, echoing the quality of our services"
+            }
+          />
+          <Testimonial />
+          <CoreFeature
+            elementRef={palns}
+            title={"PRICING PLANS"}
+            btntext={"Simple Pricing"}
+            para={
+              "Explore versatile pricing plans to match your needs. From budget-friendly options to scalable features, find your ideal plan with transparent pricing"
+            }
+
+          />
+          <PricingPlan />
+          <Contactform />
+          <Footer />
+        </div>
       </div>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: -60 },
-          visible: {
-            opacity: 1,
-            y: 0,
 
-            transition: {
-              duration: 0.8,
-              easings: "easeOut",
-            },
-          },
-        }}
-        initial={"hidden"}
-        animate={mainControls}
 
-        ref={elementRef}
-      >
-        <FeatureTabs />
-      </motion.div>
-
-      <TrustedBy />
-      <Social />
-      <JoinWithUs />
-      <Faqs />
-      <CoreFeature
-        elementRef={testimonial}
-        title={"Client’s Testimonials"}
-        btntext={"TESTIMONIALS"}
-        para={
-          "Listening to our clients' success stories resonates deeply, echoing the quality of our services"
-        }
-      />
-      <Testimonial />
-      <CoreFeature
-        elementRef={palns}
-        title={"PRICING PLANS"}
-        btntext={"Simple Pricing"}
-        para={
-          "Explore versatile pricing plans to match your needs. From budget-friendly options to scalable features, find your ideal plan with transparent pricing"
-        }
-
-      />
-      <PricingPlan />
-      <Contactform />
-      <Footer />
-      {/*
-
- */}
     </>
   )
 }

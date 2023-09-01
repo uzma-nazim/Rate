@@ -1,9 +1,12 @@
 import React from "react";
 import herolight from "@/assets/images/hero-light.png";
+import herodark from "@/assets/images/hero-dark.png";
 import shape01 from "@/assets/images/shape-01.png";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { useTheme } from "@/context/ThemeContext";
+import { theme } from "@/utils/theme";
 
 // const motion = dynamic(
 //   () => import("framer-motion").then((module) => module.motion),
@@ -11,12 +14,13 @@ import { motion } from "framer-motion";
 // );
 
 const HeroSection = () => {
+  const { isDarkMode } = useTheme();
+
   return (
     <div id="home" className="container  hero-section-box">
       <motion.div
         initial={{ opacity: 0, x: -50 }} // Initial opacity set to 0 and y-position set to 50px (downwards)
         animate={[
-          
           { opacity: 1, x: 0, transition: { duration: 0.1, ease: "easeOut" } }, // Faster accel
           {
             opacity: 1,
@@ -37,7 +41,7 @@ const HeroSection = () => {
         </p>
         <div className="input-box">
           <Link href="#plans">
-            <button className="round-btn bg-blue">Get Started</button>
+            <button className="round-btn bg-blue bg2">Get Started</button>
           </Link>
         </div>
       </motion.div>
@@ -55,7 +59,11 @@ const HeroSection = () => {
           },
         ]}
       >
-        <img className="hero-image" src={herolight.src} alt="" />
+        <img
+          className="hero-image"
+          src={isDarkMode == theme.light ? herolight.src : herodark.src}
+          alt=""
+        />
         <img className="shape1" src={shape01.src} alt="" />
       </motion.div>
     </div>

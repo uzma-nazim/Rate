@@ -11,7 +11,7 @@ const JoinWithUs = () => {
   const { elementRef, mainControls } = useInViewAnimation();
 
   return (
-    <div className="join-with-us-box container">
+    <div className="join-with-us-box container bg2">
       <motion.div
         variants={{
           hidden: { opacity: 0, x: -50 },

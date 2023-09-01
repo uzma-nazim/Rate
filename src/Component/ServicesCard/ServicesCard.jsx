@@ -4,7 +4,7 @@ import { BsBoxSeam } from "react-icons/bs";
 const ServicesCard = ({ title, desc, icon, img }) => {
   
   return (
-    <div className="services-card">
+    <div className="services-card bg2">
       <div className="icon-box">{icon ?
       <></>
       // <BsBoxSeam style={{color:"#fff"}}/>

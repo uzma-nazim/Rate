@@ -1,9 +1,12 @@
 @import "colors";
 @import "mediaquery";
 .brandlogo {
-  background-color: $lightWhite;
-  border-top: 1px solid $EEE;
-  border-bottom: 1px solid $EEE;
+  background-color: transparent;
+  // border-left:none  !important;
+  // border-right:none  !important;
+  // border-top: 1px solid $EEE;
+  // border-bottom: 1px solid $EEE;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,4 +23,8 @@
       width: 83px;
     }
   }
+}
+.brandlogo-container{
+    border-left:none  !important;
+  border-right:none  !important;
 }
