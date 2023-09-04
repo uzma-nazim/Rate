@@ -43,7 +43,7 @@ export default function Home() {
 
           <Header />
           <HeroSection />
-          <Brandlogo />
+          {/* <Brandlogo /> */}
           <CoreFeature
             elementRef={company}
             title={"Our Company's Products"}

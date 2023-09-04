@@ -5,7 +5,8 @@
   background: #fff;
   box-shadow: 0px 8px 24px 0px rgba(45, 74, 170, 0.08);
   border-radius: 10px;
-  padding: 10px 0px 10px 0px;
+  // padding: 10px 0px 10px 0px;
+
   @include tablet {
     display: block !important;
     // margin-left: 15px;
@@ -14,9 +15,12 @@
   }
   .nav-link {
     border: none !important;
-    background-color: transparent   !important;
+    background-color: transparent  !important;
     display: flex;
     justify-content: center;
+  
+  padding: 15px 0px 15px 0px;
+    
     // &:hover {
     // }
   }
@@ -28,13 +32,19 @@
       border-radius: 4px 4px 0px 0px;
       background-color: $lightblue;
       position: absolute;
-      bottom: -11px;
+      bottom: -0px;
       left: 63px;
       width: 74%;
       height: 4px;
       content: "";
-      @include mobile{
-        bottom: -1px;
+   
+    }
+  }
+  @include tablet{
+    .nav-link.active {
+      &::after{
+
+        bottom: 0px;
       }
     }
   }

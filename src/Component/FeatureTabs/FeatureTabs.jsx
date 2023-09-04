@@ -14,9 +14,9 @@ const TabButtun = ({ title, count }) => {
   return (
     <div>
       <div className="tabs-button">
-        <div className="circle-box">
+        {/* <div className="circle-box">
           <p className="p3 dark-white-text">{count}</p>
-        </div>
+        </div> */}
         <div>
           <p className="p2 dark-white-text">{title}</p>
         </div>

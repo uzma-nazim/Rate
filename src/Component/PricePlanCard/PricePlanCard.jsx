@@ -21,9 +21,9 @@ const PricePlanCard = ({
   storage,
 }) => {
   const { elementRef, mainControls } = useInViewAnimation();
-  const router  = useRouter()
+  const router = useRouter();
   const handleGetPlan = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     var recipientEmail = " rateeehr@gmail.com";
     var subject = "Consultation";
     var body = `
@@ -41,8 +41,67 @@ const PricePlanCard = ({
       encodeURIComponent(subject) +
       "&body=" +
       encodeURIComponent(body);
-      router.push(gmailComposeURL)
-      console.log("gmailComposeURL", gmailComposeURL)
+    router.push(gmailComposeURL);
+    console.log("gmailComposeURL", gmailComposeURL);
+  };
+  const attendeesEmails = [
+    { email: "user1@example.com" },
+    { email: "user2@example.com" },
+  ];
+  const event = {
+    summary: "Coding class",
+    location: "Virtual / Google Meet",
+    description: "Learn how to code with Javascript",
+    start: {
+      dateTime: "2022-01-18T09:00:00-07:00",
+      timeZone: "America/Los_Angeles",
+    },
+    end: {
+      dateTime: "2022-01-18T09:30:00-07:00",
+      timeZone: "America/Los_Angeles",
+    },
+    attendees: attendeesEmails,
+    reminders: {
+      useDefault: false,
+      overrides: [
+        { method: "email", minutes: 24 * 60 },
+        { method: "popup", minutes: 10 },
+      ],
+    },
+    conferenceData: {
+      createRequest: {
+        conferenceSolutionKey: {
+          type: "hangoutsMeet",
+        },
+        requestId: "coding-calendar-demo",
+      },
+    },
+  };
+
+  const handleGetLink = async (e) => {
+    e.preventDefault()
+    // const response = await calendar.events.insert({
+    //   calendarId: "primary",
+    //   resource: event,
+    //   conferenceDataVersion: 1,
+    // });
+
+    // const {
+    //   config: {
+    //     data: { summary, location, start, end, attendees },
+    //   },
+    //   data: { conferenceData },
+    // } = response;
+
+    // // Get the Google Meet conference URL in order to join the call
+    // const { uri } = conferenceData.entryPoints[0];
+    // console.log(
+    //   `📅 Calendar event created: ${summary} at ${location}, from ${
+    //     start.dateTime
+    //   } to ${end.dateTime}, attendees:\n${attendees
+    //     .map((person) => `🧍 ${person.email}`)
+    //     .join("\n")} \n 💻 Join conference call link: ${uri}`
+    // );
   };
   return (
     <motion.div
@@ -90,10 +149,10 @@ const PricePlanCard = ({
         <p className="p2 text-dark-blue"> {timeline}</p>
         <p className="p2"> {manitaince}</p>
       </div>
-      <a href="" onClick={handleGetPlan} className="get-plan">
+      <a href="" onClick={handleGetLink} className="get-plan">
         <p className="p2 text-blue dark-white-text">Arrange Meeting</p>
         {/* <img src={bluearrow.src} alt="" /> */}
-        <FiArrowRight style={{color:theme.dark?"#fff":"#006bff"}} />
+        <FiArrowRight style={{ color: theme.dark ? "#fff" : "#006bff" }} />
       </a>
     </motion.div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import aboutlight01 from "@/assets/images/features-light-01.png";
 import aboutdark from "@/assets/images/features-dark-01.png";
+
 import ProductGrowth from "../ProductGrowth/ProductGrowth";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
