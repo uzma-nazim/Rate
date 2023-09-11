@@ -14,6 +14,7 @@ import { MdOutlineDarkMode } from "react-icons/md";
 const myFont = localFont({ src: "../../assets/font/corporate-normal.otf" });
 import { useTheme } from "@/context/ThemeContext";
 import { theme } from "@/utils/theme";
+import { GrMenu } from "react-icons/gr";
 
 function Header() {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -34,7 +35,9 @@ function Header() {
             <h5 className={`${myFont.className} logo-color`}> Rate</h5>
           </div>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle style={{outline:"none", border:"none"}} aria-controls="responsive-navbar-nav" >
+          <GrMenu className="menu-icon"/>
+        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto link-wrapper">
             <Nav.Link href="/#home" className="header-link">
@@ -47,10 +50,15 @@ function Header() {
               Plans
             </Nav.Link>
           </Nav>
-          <Nav>
+          <Nav className="menu-icon-wrapper">
+            {/* <div className="menu-icon-wrapper"> */}
             {/* <Nav.Link href="#deets" className="header-link">Sign in</Nav.Link> */}
             <div onClick={toggleTheme} className="theme-mode">
-              {isDarkMode == theme.light ? <PiSun  className="mode-icon"/> : <MdOutlineDarkMode className="mode-icon"/>}
+              {isDarkMode == theme.light ? (
+                <PiSun className="mode-icon" />
+              ) : (
+                <MdOutlineDarkMode className="mode-icon" />
+              )}
             </div>
             <Link href={contact.mailLink}>
               <button className="round-btn light-blue headerContact">
@@ -58,6 +66,7 @@ function Header() {
                 {/* <img src={leftArrow.src} alt="" /> */}
               </button>
             </Link>
+            {/* </div> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

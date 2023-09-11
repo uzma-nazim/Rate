@@ -43,7 +43,7 @@ export default function Home() {
 
           <Header />
           <HeroSection />
-          {/* <Brandlogo /> */}
+
           <CoreFeature
             elementRef={company}
             title={"Our Company's Products"}
@@ -53,7 +53,7 @@ export default function Home() {
             }
           />
           <Services />
-          {/* <ProductFeature /> */}
+
           <div className='knowMoreProduct'>
             <CoreFeature
               elementRef={product}
@@ -84,7 +84,6 @@ export default function Home() {
           >
             <FeatureTabs />
           </motion.div>
-
           <TrustedBy />
           <Social />
           <JoinWithUs />
@@ -110,6 +109,7 @@ export default function Home() {
           <PricingPlan />
           <Contactform />
           <Footer />
+
         </div>
       </div>
 

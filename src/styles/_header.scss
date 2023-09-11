@@ -19,9 +19,17 @@
     color: $lightblue !important;
   }
 }
+.menu-icon-wrapper{
+  @include tablet{
+    // display: flex;
+    flex-direction: row;
+    
+  }   
+}
 .navbar-collapse {
-  @include mobile{
+  @include tablet{
     display: flex;
+    
   }
   @include tablet {
     // border: 1px solid red !important;

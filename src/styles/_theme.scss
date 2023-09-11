@@ -6,6 +6,11 @@
   .bg {
     background-color: #181c31 !important;
   }
+  .menu-icon {
+    path {
+      stroke: #fff !important;
+    }
+  }
   .card-header {
     background-color: #252a42 !important;
     border-bottom: 1px solid $darkBorder !important;
@@ -50,6 +55,11 @@
   .h6 {
     color: $blue;
   }
+  .menu-icon {
+    path {
+      stroke: #181c31 !important;
+    }
+  }
   .bg {
     background-color: #fff !important;
     color: #000;
@@ -64,6 +74,5 @@
   .card-header {
     background-color: $white !important;
     border-bottom: 1px solid $white;
-
   }
 }
