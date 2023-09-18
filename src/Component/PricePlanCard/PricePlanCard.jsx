@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import bluearrow from "@/assets/images/blue-arrow.svg";
 import { motion } from "framer-motion";
 import useInViewAnimation from "@/Hook/useInViewAnimation";
@@ -8,7 +8,10 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { theme } from "@/utils/theme";
 import { BsArrowRight } from "react-icons/bs";
 import { FiArrowRight } from "react-icons/fi";
-
+import { GoogleOAuthProvider, useGoogleLogin } from "@react-oauth/google";
+import PymentPlanModal from "../PymentPlanModal/PymentPlanModal";
+import Toast from "../Toast/Toast";
+import { toast } from "react-toastify";
 const PricePlanCard = ({
   delay,
   timeline,
@@ -21,29 +24,10 @@ const PricePlanCard = ({
   storage,
 }) => {
   const { elementRef, mainControls } = useInViewAnimation();
+  const [planModal, setplanModal] = useState(false);
+  const [authDetails, setauthDetails] = useState(false);
   const router = useRouter();
-  const handleGetPlan = (e) => {
-    e.preventDefault();
-    var recipientEmail = " rateeehr@gmail.com";
-    var subject = "Consultation";
-    var body = `
-    
-    plan type : ${tittle}\n
-    current date:${new Date().getDate()}
-    current time:${moment().format("h:mm a")}
-    meeting link:https://meet.google.com/?hs=197&authuser=0
-    `; // You can use line breaks as "%0A" in the URL
 
-    var gmailComposeURL =
-      "https://mail.google.com/mail/u/0/?view=cm&to=" +
-      encodeURIComponent(recipientEmail) +
-      "&su=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(body);
-    router.push(gmailComposeURL);
-    console.log("gmailComposeURL", gmailComposeURL);
-  };
   const attendeesEmails = [
     { email: "user1@example.com" },
     { email: "user2@example.com" },
@@ -79,7 +63,7 @@ const PricePlanCard = ({
   };
 
   const handleGetLink = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // const response = await calendar.events.insert({
     //   calendarId: "primary",
     //   resource: event,
@@ -103,6 +87,16 @@ const PricePlanCard = ({
     //     .join("\n")} \n 💻 Join conference call link: ${uri}`
     // );
   };
+
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      console.log(tokenResponse);
+      setplanModal(true);
+      setauthDetails(tokenResponse);
+    },
+  });
+
+  
   return (
     <motion.div
       variants={{
@@ -124,6 +118,9 @@ const PricePlanCard = ({
       ref={elementRef}
       className="pricing-plan bg2 border-color"
     >
+      <Toast />
+
+      <PymentPlanModal authDetails={authDetails} open={planModal} setOpen={setplanModal} />
       {popular ? (
         <div className="popular-tag">
           <p className="p4">popular</p>
@@ -149,9 +146,17 @@ const PricePlanCard = ({
         <p className="p2 text-dark-blue"> {timeline}</p>
         <p className="p2"> {manitaince}</p>
       </div>
-      <a href="" onClick={handleGetLink} className="get-plan">
+
+      {/* <button onClick={() => login()}>test</button> */}
+      <a
+        href=""
+        onClick={(e) => {
+          e.preventDefault(), login();
+        }}
+        className="get-plan"
+      >
         <p className="p2 text-blue dark-white-text">Arrange Meeting</p>
-        {/* <img src={bluearrow.src} alt="" /> */}
+
         <FiArrowRight style={{ color: theme.dark ? "#fff" : "#006bff" }} />
       </a>
     </motion.div>

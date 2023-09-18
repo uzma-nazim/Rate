@@ -3,10 +3,18 @@ import { Form } from "react-bootstrap";
 import leftArrow from "@/assets/images/icon-arrow-dark.svg";
 import { motion } from "framer-motion";
 import useInViewAnimation from "@/Hook/useInViewAnimation";
+import { useTheme } from "@/context/ThemeContext";
+import { theme } from "@/utils/theme";
 
 const FormBox = () => {
   const { elementRef, mainControls } = useInViewAnimation();
+  const { isDarkMode, toggleTheme } = useTheme();
 
+  const inputSTyle = {
+    
+    color: isDarkMode == theme.light ? "#252a42" : "#fff  ",
+    borderColor: isDarkMode == theme.light ? "#eeeeee" : "#2d2f40 ",
+  };
   return (
     <motion.div 
     variants={{
@@ -30,15 +38,16 @@ const FormBox = () => {
       <h3 className="h3">Send a message</h3>
       <div>
         <div className="input-box">
-          <input type="text" placeholder="Full name" className="input2" />
-          <input type="text" placeholder="Email address" className="input2" />
+          <input style={inputSTyle} type="text" placeholder="Full name" className="input2" />
+          <input style={inputSTyle}  type="text" placeholder="Email address" className="input2" />
         </div>
         <div className="input-box">
-          <input type="text" placeholder="Subject" className="input2" />
-          <input type="text" placeholder="Phone number" className="input2" />
+          <input style={inputSTyle}  type="text" placeholder="Subject" className="input2" />
+          <input style={inputSTyle}  type="text" placeholder="Phone number" className="input2" />
         </div>
         {/* <div className="horizontal-line"></div> */}
         <textarea
+        style={inputSTyle} 
           className="input2"
           name=""
           id=""

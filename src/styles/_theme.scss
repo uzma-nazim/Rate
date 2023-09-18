@@ -6,6 +6,13 @@
   .bg {
     background-color: #181c31 !important;
   }
+  .input1 {
+    background-color: #252a42 !important;
+  }
+  .card-body{
+    border-bottom-color: $darkBorder !important;
+
+  }
   .menu-icon {
     path {
       stroke: #fff !important;
@@ -60,10 +67,17 @@
       stroke: #181c31 !important;
     }
   }
+  .card-body{
+    border-bottom-color: $white !important;
+
+  }
   .bg {
     background-color: #fff !important;
     color: #000;
     background-color: $lightWhite;
+  }
+  .modal-content {
+    background-color: #fff !important;
   }
   .mode-icon {
     color: $lightgray;

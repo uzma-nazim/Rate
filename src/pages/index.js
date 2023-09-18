@@ -22,6 +22,7 @@ import { useRef } from 'react'
 import useInViewAnimation from '@/Hook/useInViewAnimation'
 import { motion } from "framer-motion";
 
+import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 
 const inter = Inter({ subsets: ['latin'] })
 import { useTheme } from '@/context/ThemeContext'
@@ -31,12 +32,15 @@ export default function Home() {
 
   const { elementRef, mainControls } = useInViewAnimation();
 
+
   const company = useRef(null)
   const product = useRef(null)
   const testimonial = useRef(null)
   const palns = useRef(null)
   return (
     <>
+
+
       <div className='line-animation'></div>
       <div className={isDarkMode}>
         <div className='bg'>
@@ -106,12 +110,20 @@ export default function Home() {
             }
 
           />
-          <PricingPlan />
+          <GoogleOAuthProvider
+
+            clientId="750995597319-so7qj5dse60rq0mr1o84p6or63o76ci0.apps.googleusercontent.com"
+            // clientId="63404557474-jusctqltii9cflg6i3864019qhsfe9vu.apps.googleusercontent.com"
+
+          >
+            <PricingPlan />
+          </GoogleOAuthProvider>;
           <Contactform />
           <Footer />
 
         </div>
       </div>
+
 
 
     </>

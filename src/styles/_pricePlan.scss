@@ -83,3 +83,12 @@
     width: 100%;
   }
 }
+.payment-modal{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  input{
+    width: 100%;
+
+  }
+}

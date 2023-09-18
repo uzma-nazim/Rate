@@ -73,7 +73,7 @@ function AccordionsComp() {
             question=" Can I use your HRM Management System on my mobile device?"
           />
         </Card.Header>
-        <Accordion.Collapse eventKey="1">
+        <Accordion.Collapse eventKey="1" >
           <Card.Body>
             <p className="p2">
               Absolutely! We understand the importance of mobility in today's

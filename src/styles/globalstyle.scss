@@ -41,6 +41,7 @@ body{
   border-radius: $radius;
   border: $border;
   color: $color;
+  outline: none;
   &::placeholder {
     color: rgb(117, 118, 147, 0.6);
     font-weight: 500;

@@ -26,6 +26,10 @@ function Header() {
       sticky="top"
       collapseOnSelect
       expand="lg"
+      style={{
+    borderColor: isDarkMode == theme.light ? "#eeeeee" : "#2d2f40 ",
+
+      }}
       className="   header-box bg"
     >
       <Container>
