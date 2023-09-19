@@ -16,10 +16,10 @@ function MyVerticallyCenteredModal(props) {
   const { isDarkMode, toggleTheme } = useTheme();
 
   const [state, setState] = useState({
-    // email: "",
+    email: "",
 
-    summary: "",
     loading: false,
+    summary: "",
     description: "",
     // gAuth: props.authDetails,
     start: {
@@ -41,7 +41,15 @@ function MyVerticallyCenteredModal(props) {
     axios({
       method: "post",
       url: `${BASE_URL}/meetLink`,
-      data: { ...state, gAuth: props.authDetails },
+      data: {
+        summary: state.summary,
+        description: state.description,
+        // gAuth: props.authDetails,
+        start: state.start,
+        end: state.end,
+        email: state.email,
+        gAuth: props.authDetails,
+      },
     })
       .then((res) => {
         console.log("res", res);
@@ -112,7 +120,6 @@ function MyVerticallyCenteredModal(props) {
     borderColor: isDarkMode == theme.light ? "#eeeeee" : "#2d2f40 ",
   };
 
-
   return (
     <Modal
       {...props}
@@ -170,6 +177,21 @@ function MyVerticallyCenteredModal(props) {
         // className="bg"
       >
         <div className="payment-modal">
+          <input
+            type="email"
+            style={inputSTyle}
+            onChange={(e) => {
+              setState((prev) => {
+                return {
+                  ...prev,
+                  email: e.target.value,
+                };
+              });
+            }}
+            value={state.email}
+            className="input1"
+            placeholder="Enter Email "
+          />
           <input
             type="text"
             style={inputSTyle}
