@@ -54,7 +54,7 @@ function MyVerticallyCenteredModal(props) {
       .then((res) => {
         console.log("res", res);
         props.onClose();
-        toast("🦄 Wow so easy!", {
+        toast.success("Successfully sent emial", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,

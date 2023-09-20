@@ -62,31 +62,7 @@ const PricePlanCard = ({
     },
   };
 
-  const handleGetLink = async (e) => {
-    e.preventDefault();
-    // const response = await calendar.events.insert({
-    //   calendarId: "primary",
-    //   resource: event,
-    //   conferenceDataVersion: 1,
-    // });
-
-    // const {
-    //   config: {
-    //     data: { summary, location, start, end, attendees },
-    //   },
-    //   data: { conferenceData },
-    // } = response;
-
-    // // Get the Google Meet conference URL in order to join the call
-    // const { uri } = conferenceData.entryPoints[0];
-    // console.log(
-    //   `📅 Calendar event created: ${summary} at ${location}, from ${
-    //     start.dateTime
-    //   } to ${end.dateTime}, attendees:\n${attendees
-    //     .map((person) => `🧍 ${person.email}`)
-    //     .join("\n")} \n 💻 Join conference call link: ${uri}`
-    // );
-  };
+  
 
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
